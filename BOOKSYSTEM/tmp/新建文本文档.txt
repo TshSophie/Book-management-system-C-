@@ -1,0 +1,25 @@
+ //将用户选择的图片上传到系统指定目录
+
+            System.DateTime startTime = TimeZone.CurrentTimeZone.ToLocalTime(new System.DateTime(1970, 1, 1)); // 当地时区
+
+            long timeStamp = (long)(DateTime.Now - startTime).TotalMilliseconds; // 相差毫秒数
+
+            string oldfilepath = null;
+
+            string newfilepath = "C:\\Users\\tsh\\Desktop\\文件目录\\C#实验报告\\EXAM_LAB\\BOOKSYSTEM\\BOOKSYSTEM\\tmp\\";
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Multiselect = true;
+            fileDialog.Title = "请选择文件";
+            fileDialog.Filter = "所有文件(*jpg*)|*.jpg*"; //设置要选择的文件的类型
+            if (fileDialog.ShowDialog() == DialogResult.OK)
+            {
+                oldfilepath = fileDialog.FileName;//返回文件的完整路径   
+               // MessageBox.Show("文件的路径是：" + oldfilepath);
+            }
+            newfilepath += timeStamp + ".jpg";//使用时间戳作为文件名称
+
+            if (oldfilepath != null) //防止用户取消后出现的异常提示
+            {
+                File.Copy(oldfilepath, newfilepath);
+            }
+

@@ -1,6 +1,8 @@
 ## 项目封面
 
-![](D:/MyDocument/技术博客/我的blog/项目介绍/images/bookmanage.png)
+![](bookmanage.png)
+
+
 
 
 
@@ -22,4 +24,3 @@ If you want to use the aplication ,you need connect your MSSQLSERVER ,And the da
 If you want to manage book ,you can use Sophie's account :
 ID :SOPHIE 
 PASSWORD:12345
-
